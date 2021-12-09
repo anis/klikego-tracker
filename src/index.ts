@@ -22,8 +22,8 @@ import * as nodeMailjet from 'node-mailjet';
                             },
                             To: [
                                 {
-                                    Email: config.sender.email,
-                                    Name: config.sender.name,
+                                    Email: config.recipient.email,
+                                    Name: config.recipient.name,
                                 },
                             ],
                             Subject: `${config.event.name} - Un dossard est disponible !`,
