@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@types/node": "^16.11.12",
+    "axios": "^0.24.0",
+    "node-mailjet": "^3.3.4",
+    "ts-node": "^10.4.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.5.2"
+  }
+}

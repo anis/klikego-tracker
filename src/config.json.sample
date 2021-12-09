@@ -1,0 +1,18 @@
+{
+  "mailjet": {
+    "publicKey": "",
+    "privateKey": ""
+  },
+  "sender": {
+    "email": "",
+    "name": ""
+  },
+  "recipient": {
+    "email": "",
+    "name": ""
+  },
+  "event": {
+    "name": "Trail XXXX",
+    "link": "https://www.klikego.com/revente-dossard/xxxxx"
+  }
+}
