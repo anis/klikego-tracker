@@ -10,7 +10,7 @@ import * as nodeMailjet from 'node-mailjet';
         );
 
         const { data } = await axios.get(config.event.link);
-        if (data.match(/Pas de chance/i) === null) {
+        if (data.match(/Racheter ce dossard/i) !== null) {
             await mailjet
                 .post('send', { version: 'v3.1' })
                 .request({
