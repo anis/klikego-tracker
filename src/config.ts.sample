@@ -1,0 +1,30 @@
+const config = {
+  mailjet: {
+    publicKey: "",
+    privateKey: ""
+  },
+  sender: {
+    email: "",
+    name: ""
+  },
+  recipient: {
+    email: "",
+    name: ""
+  },
+  event: {
+    name: "XXXXX",
+    link: "https://www.klikego.com/revente-dossard/xxxxx",
+    testFn(data) {
+        return data.match(/Racheter ce dossard/i) !== null;
+    },
+    email: {
+        subject: '',
+        content: '',
+    }
+  }
+};
+
+config.event.email.subject = `${config.event.name} - Un dossard est disponible !`;
+config.event.email.content = `J'ai détecté qu'un dossard était disponible sur la bourse aux dossards de ${config.event.name}. Vérifie sur ${config.event.link}`;
+
+export default config;

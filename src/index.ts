@@ -1,4 +1,4 @@
-import * as config from './config.json';
+import config from './config';
 import axios from 'axios';
 import * as nodeMailjet from 'node-mailjet';
 
@@ -10,7 +10,7 @@ import * as nodeMailjet from 'node-mailjet';
         );
 
         const { data } = await axios.get(config.event.link);
-        if (data.match(/Racheter ce dossard/i) !== null) {
+        if (config.event.testFn(data)) {
             await mailjet
                 .post('send', { version: 'v3.1' })
                 .request({
@@ -26,8 +26,8 @@ import * as nodeMailjet from 'node-mailjet';
                                     Name: config.recipient.name,
                                 },
                             ],
-                            Subject: `${config.event.name} - Un dossard est disponible !`,
-                            TextPart: `J'ai détecté qu'un dossard était disponible sur la bourse aux dossards de ${config.event.name}. Vérifie sur ${config.event.link}`,
+                            Subject: config.event.email.subject,
+                            TextPart: config.event.email.content,
                         },
                     ],
                 });
